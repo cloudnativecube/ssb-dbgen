@@ -2,3 +2,4 @@
 *.tbl
 qgen
 dbgen
+.vscode/

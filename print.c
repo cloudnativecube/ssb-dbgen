@@ -87,7 +87,7 @@ dbg_print(int format, FILE *target, void *data, int len, int sep)
 		if (columnar)
 			fprintf(target, "%-*s", len, (char *)data);
 		else
-			fprintf(target, "\"%s\"", (char *)data);
+			fprintf(target, "%s", (char *)data);
 		break;
 #ifdef MVS
 	case DT_VSTR:
@@ -656,7 +656,7 @@ int pr_date(date_t *d, int mode){
 	d_fp = print_prep(DATE, 0);
 
     PR_STRT(d_fp);
-    PR_INT(d_fp, d->datekey);
+    PR_STR(d_fp, d->datekey, DATE_LEN);
     PR_STR(d_fp, d->date,D_DATE_LEN);
     PR_STR(d_fp, d->dayofweek,D_DAYWEEK_LEN);
     PR_STR(d_fp, d->month,D_MONTH_LEN);
@@ -982,7 +982,7 @@ vrf_region(code_t *c, int mode)
 int vrf_date(date_t * d, int mode)
 {
     VRF_STRT(DATE);
-    VRF_INT(DATE, d->datekey);
+    VRF_STR(DATE, d->datekey);
     VRF_STR(DATE, d->date);
     VRF_STR(DATE, d->dayofweek);
     VRF_STR(DATE, d->month);

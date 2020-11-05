@@ -1,0 +1,10 @@
+load data local inpath '/home/madianjun/ssb-dbgen/customer.tbl' into table `customer`;
+load data local inpath '/home/madianjun/ssb-dbgen/date.tbl' into table `date`;
+load data local inpath '/home/madianjun/ssb-dbgen/lineorder.tbl' into table `lineorder`;
+load data local inpath '/home/madianjun/ssb-dbgen/part.tbl' into table `part`;
+load data local inpath '/home/madianjun/ssb-dbgen/supplier.tbl' into table `supplier`;
+select count(*) from customer;
+select count(*) from date;
+select count(*) from lineorder;
+select count(*) from part;
+select count(*) from supplier;

@@ -701,7 +701,7 @@ mk_date(long index,date_t *d)
     sprintf(d->yearmonth,"%.3s%d",d->month,d->year);
     sprintf(d->date,"%s %d, %d",d->month,d->daynuminmonth,d->year);
     
-    d->datekey = d->year*10000+d->monthnuminyear*100+ d->daynuminmonth; 
+    sprintf(d->datekey,"%d-%02d-%02d",d->year,d->monthnuminyear,d->daynuminmonth);
 
     d->daynuminyear=(int)localTime->tm_yday+1;
     d->weeknuminyear = d->daynuminyear/7 + 1;
